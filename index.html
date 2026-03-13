@@ -128,7 +128,7 @@
 
     .hero-name {
       font-family:'Syne',sans-serif;
-      font-size:clamp(3rem,9vw,6.5rem); font-weight:800; line-height:1.0;
+      font-size: clamp(2rem, 6vw, 4rem); font-weight:800; line-height:1.0;
       background:var(--grad3); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
       margin-bottom:14px; letter-spacing:-.01em;
       opacity:0; animation:fadeUp .8s ease forwards .25s;
@@ -404,167 +404,232 @@
     }
 
     /* HERO LAYOUT WITH PHOTO */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* HERO */
+
+.hero{
+padding:80px 10%;
+min-height:100vh;
+display:flex;
+align-items:center;
+color:white;
+}
+
+/* CONTAINER */
+
 .hero-container{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  gap:60px;
-  flex-wrap:wrap;
-
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:70px;
+width:100%;
+max-width:1200px;
+margin:auto;
 }
 
-
-.hero-photo{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  overflow:hidden;
-  border:4px solid rgba(168,85,247,.4);
-  box-shadow:0 0 40px rgba(168,85,247,.35);
-  flex-shrink:0;
-}
+/* PHOTO */
 
 .hero-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+width:320px;
+border-radius:50%;
+transition:0.4s;
+box-shadow:0 0 0 4px #7c3aed, 0 0 40px rgba(124,58,237,0.6);
 }
 
-/* text area */
+.hero-photo img:hover{
+transform:scale(1.05);
+box-shadow:0 0 0 4px #9333ea, 0 0 70px rgba(147,51,234,0.7);
+}
+
+
+/* TEXT */
 .hero-content{
-  max-width:550px;
-  text-align:left;
-}
-
-/* mobile responsive */
-@media(max-width:768px){
-  .hero-container{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-content{
-    text-align:center;
-  }
-}
-
-    /* ============================= */
-/* RESPONSIVE HERO SECTION */
-/* ============================= */
-
-/* Tablet */
-@media (max-width:1024px){
-
-  .hero-name{
-    font-size:48px;
-  }
-
-  .hero-sub{
-    font-size:18px;
-  }
-
-  .hero-desc{
-    font-size:15px;
-    max-width: 600px;
-    margin: auto;
-  }
-
-  .hero-photo{
-    width:180px;
-    height:180px;
-  }
-
-}
-
-
-/* Mobile */
-@media (max-width:768px){
-
-  .hero-container{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:30px;
-  }
-
-  .hero-photo{
-    width:150px;
-    height:150px;
-  }
-
-  .hero-name{
-    font-size:36px;
-    line-height:1.2;
-  }
-
-  .hero-sub{
-    font-size:16px;
-  }
-
-  .hero-desc{
-    font-size:14px;
-    padding:0 20px;
-  }
-
-  .hero-btns{
-    flex-direction:column;
-    gap:12px;
-  }
-
-}
-
-
-/* Small phones */
-@media (max-width:480px){
-
-  .hero-name{
-    font-size:28px;
-  }
-
-  .hero-photo{
-    width:120px;
-    height:120px;
-  }
-
-}
-
-/* ===== DESKTOP / LAPTOP ===== */
-.hero-container{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  gap:80px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.hero-photo{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  overflow:hidden;
-  border:4px solid #a855f7;
-  box-shadow:0 0 30px rgba(168,85,247,.4);
-}
-
-.hero-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+max-width:600px;
 }
 
 .hero-name{
-  font-size:64px;
-  line-height:1.1;
+font-size:54px;
+font-weight:800;
+margin:15px 0;
+letter-spacing:2px;
+color:#ff6b2b;
+text-transform:uppercase;
 }
 
 .hero-sub{
-  font-size:22px;
+font-size:14px;
+color:#a0a0b0;
+margin-bottom:10px;
+letter-spacing:4px;
+text-transform:uppercase;
 }
 
 .hero-desc{
-  font-size:16px;
-  max-width:600px;
+margin-top:10px;
+line-height:1.7;
+color:#c0c0cc;
+font-size:15px;
+}
+
+/* BADGES */
+
+.winner-pill{
+background:rgba(180,80,20,0.25);
+border:1px solid rgba(255,107,43,0.3);
+padding:8px 18px;
+border-radius:30px;
+display:inline-block;
+font-size:13px;
+margin-bottom:10px;
+color:#ff8c55;
+}
+
+.avail-badge{
+font-size:13px;
+margin-bottom:5px;
+color:#c0c0cc;
+}
+
+.dot{
+height:8px;
+width:8px;
+background:#22c55e;
+border-radius:50%;
+display:inline-block;
+margin-right:6px;
+}
+
+/* BUTTONS */
+
+.hero-btns{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn-fill{
+padding:12px 28px;
+background:linear-gradient(90deg,#ff5500,#ff8c00);
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+font-weight:600;
+font-size:14px;
+}
+
+.btn-fill:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 25px rgba(255,85,0,0.5);
+}
+
+.btn-ghost{
+padding:12px 28px;
+border:1px solid #4a4a5a;
+background:rgba(255,255,255,0.05);
+color:white;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+font-size:14px;
+}
+
+.btn-ghost:hover{
+background:rgba(255,255,255,0.1);
+border-color:#7c3aed;
+transform:translateY(-3px);
+}
+
+/* ================= */
+/* TABLET */
+/* ================= */
+
+@media(max-width:1024px){
+
+.hero-photo img{
+width:260px;
+}
+
+.hero-name{
+font-size:42px;
+}
+
+.hero-sub{
+font-size:13px;
+}
+
+}
+
+/* ================= */
+/* MOBILE */
+/* ================= */
+
+@media(max-width:900px){
+
+.hero-container{
+flex-direction:column;
+text-align:center;
+gap:40px;
+}
+
+.hero-photo img{
+width:200px;
+}
+
+.hero-name{
+font-size:34px;
+}
+
+.hero-desc{
+font-size:14px;
+}
+
+.hero-btns{
+justify-content:center;
+}
+
+}
+
+/* ================= */
+/* SMALL MOBILE */
+/* ================= */
+
+@media(max-width:480px){
+
+.hero-name{
+font-size:28px;
+}
+
+.hero-photo img{
+width:170px;
+}
+
+.hero-sub{
+font-size:12px;
+}
+
+}
+
+.nav-brand{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:700;
+font-size:20px;
+}
+
+.nav-logo{
+width:52px;
+height:32px;
+object-fit:contain;
 }
   </style>
 </head>
@@ -575,16 +640,18 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">Sarukesh.AI</div>
+  <div class="nav-brand">
+  <img src="logo.png" alt="logo" class="nav-logo">
+  Sarukesh.AI
+</div>
   <ul class="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#connect">Contact</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Contact</button>
+  <button class="nav-cta" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})" a href="#connect">Contact</button>
   <button class="nav-hamburger" id="hamburger">☰</button>
 </nav>
 <div class="mob-nav" id="mobNav">
@@ -601,48 +668,53 @@
 
 <div class="hero-container">
 
-  <!-- PHOTO -->
-  <div class="hero-photo">
-    <img src="sarukesh.jpg" alt="Sarukesh Photo">
-  </div>
+<!-- PHOTO -->
+<div class="hero-photo">
+<img src="sarukesh.jpg" alt="Sarukesh Photo">
+</div>
 
-  <!-- TEXT -->
-  <div class="hero-content">
+<!-- TEXT -->
+<div class="hero-content">
 
-  <div class="winner-pill">🏆 Smart India Hackathon Winner 2024</div>
+<div class="winner-pill">
+🏆 Smart India Hackathon Winner 2024
+</div>
 
-  <div class="avail-badge">
-    <span class="dot"></span>
-    Available for opportunities
-    <span class="li-box">in</span>
-  </div>
+<a href="https://www.linkedin.com/in/sarukesh-m-4a1966300" target="_blank" class="avail-badge">
+  <span class="dot"></span>
+  Available for opportunities
+  <span class="li-box">in</span>
+</a>
 
-  <h1 class="hero-name">SARUKESH M</h1>
+<h1 class="hero-name">SARUKESH M</h1>
 
-  <p class="hero-sub">AI & Data Science Innovator</p>
+<p class="hero-sub">
+AI & Data Science Innovator
+</p>
 
-  <p class="hero-desc">
-    B.Tech AI & Data Science student (CGPA 8.1) at Nehru Institute of Engineering and Technology.
-    Building impactful solutions in Machine Learning, Computer Vision, and Assistive Technology
-    that transform real-world challenges into intelligent systems.
-  </p>
+<p class="hero-desc">
+B.Tech AI & Data Science student passionate about building intelligent systems using Machine Learning,
+Computer Vision, and AI-driven solutions that solve real-world problems.
+</p>
 
-  <div class="hero-btns">
-    <button class="btn-fill" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-      🚀 Explore My Work
-    </button>
+<div class="hero-btns">
 
-    <button class="btn-ghost" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">
-      ⬇ Download Resume
-    </button>
-  </div>
+<button class="btn-fill"
+onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+🚀 Explore My Work
+</button>
 
-  </div>
+<a href="resume.pdf" download>
+<button class="btn-ghost">⬇ Download Resume</button>
+</a>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
-
 <!-- ══ ABOUT ══ -->
 <section class="about" id="about">
   <div class="wrap">
